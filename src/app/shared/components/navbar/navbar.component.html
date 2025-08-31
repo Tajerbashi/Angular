@@ -1,0 +1,109 @@
+<mat-toolbar color="primary" class="navbar" role="navigation">
+  <!-- Mobile menu button -->
+  <button
+    mat-icon-button
+    aria-label="Toggle navigation menu"
+    *ngIf="isHandset$ | async"
+    [matMenuTriggerFor]="mobileMenu"
+    class="menu-button"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <!-- Brand/Logo -->
+  <a class="brand" routerLink="/home" aria-label="Go to homepage">
+    <mat-icon class="brand-icon" aria-hidden="true">rocket</mat-icon>
+    <span class="brand-text">My App</span>
+  </a>
+
+  <span class="spacer"></span>
+
+  <!-- Desktop Navigation -->
+  <nav class="desktop-nav" *ngIf="!(isHandset$ | async)" aria-label="Main navigation">
+    @for (item of navItems; track item.path) { @if (shouldShowItem(item)) {
+    <a
+      mat-button
+      [routerLink]="item.path"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: false }"
+      class="nav-link"
+    >
+      <mat-icon aria-hidden="true">{{ item.icon }}</mat-icon>
+      {{ item.label }}
+    </a>
+    } }
+  </nav>
+
+  <!-- Auth buttons for desktop -->
+  <div class="auth-buttons" *ngIf="!(isHandset$ | async)">
+    @if (isAuthenticated) {
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="profileMenu"
+      aria-label="User profile menu"
+      class="profile-menu-button"
+    >
+      <mat-icon aria-hidden="true">account_circle</mat-icon>
+    </button>
+    } @else {
+    <button mat-button (click)="onLogin()" aria-label="Sign in">
+      <mat-icon aria-hidden="true">login</mat-icon>
+      Sign In
+    </button>
+    }
+  </div>
+</mat-toolbar>
+
+<!-- Profile Menu -->
+<mat-menu #profileMenu="matMenu" xPosition="before">
+  <button mat-menu-item (click)="navigateTo('/profile')" aria-label="View profile">
+    <mat-icon aria-hidden="true">account_circle</mat-icon>
+    <span>Profile</span>
+  </button>
+  <button mat-menu-item (click)="navigateTo('/settings')" aria-label="Settings">
+    <mat-icon aria-hidden="true">settings</mat-icon>
+    <span>Settings</span>
+  </button>
+  <mat-divider aria-hidden="true"></mat-divider>
+  <button mat-menu-item (click)="onLogout()" aria-label="Sign out">
+    <mat-icon aria-hidden="true">logout</mat-icon>
+    <span>Logout</span>
+  </button>
+</mat-menu>
+
+<!-- Mobile Menu -->
+<mat-menu #mobileMenu="matMenu">
+  @for (item of navItems; track item.path) { @if (shouldShowItem(item)) {
+  <button mat-menu-item (click)="navigateTo(item.path)">
+    <mat-icon aria-hidden="true">{{ item.icon }}</mat-icon>
+    <span>{{ item.label }}</span>
+  </button>
+  } }
+
+  <mat-divider aria-hidden="true"></mat-divider>
+
+  @if (isAuthenticated) {
+  <button mat-menu-item (click)="navigateTo('/profile')" aria-label="View profile">
+    <mat-icon aria-hidden="true">account_circle</mat-icon>
+    <span>Profile</span>
+  </button>
+
+  <button mat-menu-item (click)="navigateTo('/settings')" aria-label="Settings">
+    <mat-icon aria-hidden="true">settings</mat-icon>
+    <span>Settings</span>
+  </button>
+
+  <button mat-menu-item (click)="onLogout()" aria-label="Sign out">
+    <mat-icon aria-hidden="true">logout</mat-icon>
+    <span>Logout</span>
+  </button>
+  } @else {
+  <button mat-menu-item (click)="onLogin()" aria-label="Sign in">
+    <mat-icon aria-hidden="true">login</mat-icon>
+    <span>Sign In</span>
+  </button>
+  }
+</mat-menu>
+
+<!-- Content projection area -->
+<ng-content></ng-content>
