@@ -7,24 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "css",
-          "skipTests": true,
-          "inlineTemplate": false,
-          "inlineStyle": false,
-          "flat": false,
-          "type": "component"
-        },
-        "@schematics/angular:service": {
-          "type": "service",
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "typeSeparator": ".",
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "typeSeparator": ".",
-          "skipTests": true
+          "style": "scss"
         }
       },
       "root": "",
@@ -35,10 +18,8 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
@@ -46,7 +27,7 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
@@ -96,11 +77,8 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
             "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
@@ -108,7 +86,7 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ]
           }
         }
@@ -116,6 +94,6 @@
     }
   },
   "cli": {
-    "analytics": "beabfd3f-eeb6-4d04-a05c-97417ab66070"
+    "analytics": "4292e759-ce19-40a9-8d1b-34a737fac826"
   }
 }
