@@ -3,27 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-app": {
+    "app-tk-angular": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss",
-          "skipTests": true,
-          "type": "component"
-        },
-        "@schematics/angular:service": {
-          "type": "service",
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "typeSeparator": ".",
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true,
-          "typeSeparator": "."
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -33,14 +15,13 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss", "@angular/material/prebuilt-themes/magenta-violet.css"],
+            "styles": ["src/styles.css"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -75,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-app:build:production"
+              "buildTarget": "app-tk-angular:build:production"
             },
             "development": {
-              "buildTarget": "angular-app:build:development"
+              "buildTarget": "app-tk-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -90,20 +71,16 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"]
+            "styles": ["src/styles.css"]
           }
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "4292e759-ce19-40a9-8d1b-34a737fac826"
   }
 }
