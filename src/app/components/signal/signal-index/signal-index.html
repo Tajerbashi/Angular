@@ -1,0 +1,20 @@
+<button (click)="toggle()" class="app-btn app-btn-primary">Toggle Signal</button>
+@if(visible){
+<div class="app-grid">
+  <div class="app-grid-item">
+    <div class="app-card">
+      <!-- card title -->
+      <div class="app-card-header">Signal</div>
+      <!-- card content body -->
+      <div class="app-card-content">
+        {{ title() }}
+      </div>
+      <!-- card footer -->
+      <div class="app-card-footer">
+        <button class="btn-secondary">Cancel</button>
+        <button class="btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+}
