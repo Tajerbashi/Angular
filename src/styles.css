@@ -1,1 +1,289 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Layout wrapper */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.app-index {
+  background: linear-gradient(45deg, rgb(0, 16, 88), rgb(45, 0, 87), rgb(66, 0, 28));
+  color: wheat;
+}
+
+.app-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid rgb(167, 167, 167);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.247);
+  padding: 10px;
+  margin: 10px 0;
+}
+.app-grid-item {
+  border: 1px solid wheat;
+  border-radius: 5px;
+  padding: 10px;
+}
+.app-grid-item:hover {
+  border: 1px solid rgb(216, 216, 216);
+}
+.app-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.app-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.app-card-header {
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  padding: 1rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.app-card-content {
+  flex: 1;
+  padding: 1.2rem;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.app-card-footer {
+  padding: 0.8rem 1rem;
+  background: #f1f1f1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.app-card-footer button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.app-btn-primary {
+  background: #4e73df;
+  color: #fff;
+}
+
+.app-btn-primary:hover {
+  background: #3756c5;
+}
+
+.app-btn-secondary {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.app-btn-secondary:hover {
+  background: #cfcfcf;
+}
+
+/* Base button style */
+.app-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding: 12px 24px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-btn:active {
+  transform: translateY(2px);
+}
+
+/* Button variants */
+.app-btn-primary {
+  color: white;
+  background: #3756c5;
+  box-shadow: 0 4px 6px rgba(55, 86, 197, 0.3);
+}
+
+.app-btn-primary:hover {
+  background: #223579;
+  box-shadow: 0 6px 8px rgba(55, 86, 197, 0.4);
+}
+
+.app-btn-secondary {
+  color: white;
+  background: #6c757d;
+  box-shadow: 0 4px 6px rgba(108, 117, 125, 0.3);
+}
+
+.app-btn-secondary:hover {
+  background: #5a6268;
+  box-shadow: 0 6px 8px rgba(108, 117, 125, 0.4);
+}
+
+.app-btn-success {
+  color: white;
+  background: #28a745;
+  box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3);
+}
+
+.app-btn-success:hover {
+  background: #218838;
+  box-shadow: 0 6px 8px rgba(40, 167, 69, 0.4);
+}
+
+.app-btn-danger {
+  color: white;
+  background: #dc3545;
+  box-shadow: 0 4px 6px rgba(220, 53, 69, 0.3);
+}
+
+.app-btn-danger:hover {
+  background: #c82333;
+  box-shadow: 0 6px 8px rgba(220, 53, 69, 0.4);
+}
+
+.app-btn-warning {
+  color: #212529;
+  background: #ffc107;
+  box-shadow: 0 4px 6px rgba(255, 193, 7, 0.3);
+}
+
+.app-btn-warning:hover {
+  background: #e0a800;
+  box-shadow: 0 6px 8px rgba(255, 193, 7, 0.4);
+}
+
+.app-btn-info {
+  color: white;
+  background: #17a2b8;
+  box-shadow: 0 4px 6px rgba(23, 162, 184, 0.3);
+}
+
+.app-btn-info:hover {
+  background: #138496;
+  box-shadow: 0 6px 8px rgba(23, 162, 184, 0.4);
+}
+
+.app-btn-light {
+  color: #212529;
+  background: #f8f9fa;
+  box-shadow: 0 4px 6px rgba(248, 249, 250, 0.3);
+}
+
+.app-btn-light:hover {
+  background: #e2e6ea;
+  box-shadow: 0 6px 8px rgba(248, 249, 250, 0.4);
+}
+
+.app-btn-dark {
+  color: white;
+  background: #343a40;
+  box-shadow: 0 4px 6px rgba(52, 58, 64, 0.3);
+}
+
+.app-btn-dark:hover {
+  background: #23272b;
+  box-shadow: 0 6px 8px rgba(52, 58, 64, 0.4);
+}
+
+/* Outline buttons */
+.app-btn-outline-primary {
+  color: #3756c5;
+  background: transparent;
+  border: 2px solid #3756c5;
+  box-shadow: none;
+}
+
+.app-btn-outline-primary:hover {
+  color: white;
+  background: #3756c5;
+  box-shadow: 0 4px 6px rgba(55, 86, 197, 0.3);
+}
+
+.app-btn-outline-secondary {
+  color: #6c757d;
+  background: transparent;
+  border: 2px solid #6c757d;
+  box-shadow: none;
+}
+
+.app-btn-outline-secondary:hover {
+  color: white;
+  background: #6c757d;
+  box-shadow: 0 4px 6px rgba(108, 117, 125, 0.3);
+}
+
+/* Button sizes */
+.app-btn-sm {
+  min-width: 90px;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+.app-btn-lg {
+  min-width: 140px;
+  padding: 16px 32px;
+  font-size: 1.125rem;
+}
+
+/* Rounded buttons */
+.app-btn-rounded {
+  border-radius: 30px;
+}
+
+/* Icon buttons */
+.app-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Disabled state */
+.app-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-btn {
+    width: 100%;
+  }
+}
