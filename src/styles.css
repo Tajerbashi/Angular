@@ -127,6 +127,8 @@ body {
   position: relative;
   overflow: hidden;
   margin: 5px 10px;
+  color: #ffffff;
+  background: #138496;
 }
 
 .app-btn:active {
@@ -135,7 +137,7 @@ body {
 
 /* Button variants */
 .app-btn-primary {
-  color: white;
+  color: white !important;
   background: #3756c5;
   box-shadow: 0 4px 6px rgba(55, 86, 197, 0.3);
 }
