@@ -126,6 +126,7 @@ body {
   text-decoration: none;
   position: relative;
   overflow: hidden;
+  margin: 5px 10px;
 }
 
 .app-btn:active {
@@ -286,4 +287,27 @@ body {
   .app-btn {
     width: 100%;
   }
+}
+
+.app-input {
+  padding: 15px 5px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: rgb(255, 255, 255);
+  margin: 5px;
+}
+.app-input::placeholder {
+  color: rgb(255, 255, 255);
+}
+.app-input:focus {
+  border-bottom: 2px solid rgba(0, 162, 255, 0.877);
+}
+
+.app-input-text {
+}
+
+em {
+  color: #1cc88a;
 }
