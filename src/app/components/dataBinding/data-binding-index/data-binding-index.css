@@ -1,0 +1,32 @@
+.app-container {
+  padding: 10px;
+}
+.app-row {
+  padding: 10px;
+  border: 1px solid wheat;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.app-col {
+  padding: 10px;
+  text-align: center;
+}
+.app-col > button {
+  padding: 10px;
+}
+.app-col-body {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+.app-col-body-content {
+}
+.app-col-body-example {
+  background: rgba(255, 169, 169, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+}

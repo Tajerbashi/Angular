@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './selector-index.css',
 })
 export class SelectorIndex {
-  visible: boolean = true;
+  visible: boolean = false;
   toggle = () => {
     this.visible = !this.visible;
   };

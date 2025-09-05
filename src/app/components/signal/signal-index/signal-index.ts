@@ -10,7 +10,7 @@ export class SignalIndex {
   protected readonly title = signal('app-tk-angular');
   titleValue = this.title();
 
-  visible: boolean = true;
+  visible: boolean = false;
   toggle = () => {
     this.visible = !this.visible;
   };

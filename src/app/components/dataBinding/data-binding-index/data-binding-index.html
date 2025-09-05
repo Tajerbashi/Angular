@@ -1,0 +1,82 @@
+<button (click)="toggleComponent()" class="app-btn app-btn-danger">Toggle Databind</button>
+@if(toggle){
+<div class="app-container">
+  <div class="app-row">
+    <div class="app-col">
+      <button class="app-btn app-btn-info">Interpolation</button>
+      <div class="app-col-body">
+        <p class="app-col-body-content">
+          <em>
+            {{ Interpolation }}
+          </em>
+        </p>
+        <p class="app-col-body-example">this is load from component {{ textInterpolation }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="app-row">
+    <div class="app-col">
+      <button class="app-btn app-btn-info">PropertyBinding</button>
+      <div class="app-col-body">
+        <p class="app-col-body-content">
+          <em>
+            {{ PropertyBinding }}
+          </em>
+        </p>
+        <p class="app-col-body-example">
+          <input
+            class="app-input app-input-text"
+            type="text"
+            [value]="propertyBinding"
+            placeholder="input ..."
+          />
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="app-row">
+    <div class="app-col">
+      <button class="app-btn app-btn-info">EventBinding</button>
+      <div class="app-col-body">
+        <p class="app-col-body-content">
+          <em>
+            {{ EventBinding }}
+          </em>
+        </p>
+        <p class="app-col-body-example">
+          <button class="app-btn app-btn-dark" (click)="onButtonClick()">Toggle Status</button>
+          <input
+            [disabled]="eventBindingBoolean"
+            class="app-input app-input-text"
+            type="text"
+            (input)="onInputChange($event)"
+            placeholder="{{ eventBindingBoolean }}"
+          />
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="app-row">
+    <div class="app-col">
+      <button class="app-btn app-btn-info">TwowayBinding</button>
+      <div class="app-col-body">
+        <p class="app-col-body-content">
+          <em>
+            {{ TwowayBinding }}
+          </em>
+        </p>
+        <p class="app-col-body-example">
+          <input
+            class="app-input app-input-text"
+            type="text"
+            [(ngModel)]="inputValue"
+            placeholder="Two-way binding example"
+          />
+          <span>{{ inputValue }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+}
