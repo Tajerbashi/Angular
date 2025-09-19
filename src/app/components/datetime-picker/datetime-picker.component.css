@@ -1,0 +1,90 @@
+/* Persian datepicker wrapper */
+.datetime-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+/* Date input */
+.datetime-picker__date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.datetime-picker__date input.datetime-input {
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  text-align: center;
+  font-weight: bold;
+}
+
+.datetime-picker__date input.datetime-input:focus {
+  border-color: #005299;
+  box-shadow: 0 0 5px rgba(0, 82, 153, 0.3);
+}
+
+/* Time selectors */
+.datetime-picker__time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.datetime-picker__time select {
+  padding: 6px 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  transition: border-color 0.2s;
+}
+
+.datetime-picker__time select:focus {
+  border-color: #005299;
+}
+
+/* Display combined value */
+.datetime-picker__display {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+}
+
+/* Hover effect for dropdowns */
+.datetime-picker__time select:hover {
+  border-color: #005299;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-width-1-6 {
+    width: 100%;
+  }
+
+  .datetime-picker {
+    padding: 10px;
+  }
+
+  .datetime-picker__time {
+    flex-wrap: wrap;
+  }
+}

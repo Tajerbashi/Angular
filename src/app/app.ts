@@ -1,17 +1,13 @@
-import { Component, signal } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { DatetimePickerComponent } from './components/datetime-picker/datetime-picker.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css',
   standalone: true,
+  imports: [RouterOutlet, DatetimePickerComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  templateUrl: './app.html',
+  styleUrls: ['./app.css'],
 })
-export class App {
-  count = 0;
-
-  increment() {
-    this.count++;
-  }
-}
+export class App {}

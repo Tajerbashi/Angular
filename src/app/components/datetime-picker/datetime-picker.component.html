@@ -1,0 +1,26 @@
+<div class="app-grid">
+  <div class="app-width-1-1">
+    <ng-persian-datepicker class="datetime-picker">
+      <!-- Date field -->
+      <div [formGroup]="timeForm" class="datetime-picker__date">
+        <input class="datetime-input" type="text" [formControl]="dateValue1" placeholder="تاریخ" />
+      </div>
+
+      <!-- Time selectors -->
+      <div class="datetime-picker__time" [formGroup]="timeForm">
+        <select formControlName="hour">
+          <option *ngFor="let h of hours" [value]="h">{{ h }}</option>
+        </select>
+        :
+        <select formControlName="minute">
+          <option *ngFor="let m of minutes" [value]="m">{{ m }}</option>
+        </select>
+      </div>
+
+      <!-- Display -->
+      <div class="datetime-picker__display">{{ displayValue1 }}</div>
+    </ng-persian-datepicker>
+
+    <button class="app-btn app-btn-primary" (click)="showDates()">Print</button>
+  </div>
+</div>

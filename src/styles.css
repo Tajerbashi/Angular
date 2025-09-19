@@ -133,6 +133,7 @@ body {
 /* =========================
    Responsive Collapse
 ========================= */
+/* 
 @media (max-width: 992px) {
   .app-width-1-2,
   .app-width-1-3,
@@ -153,6 +154,7 @@ body {
     max-width: 100%;
   }
 }
+*/
 
 /* =========================
    Buttons

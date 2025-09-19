@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
+import { SHARED_IMPORTS } from '../../../shared-imports';
 
 @Component({
-  selector: 'app-samples',
-  imports: [],
-  templateUrl: './samples.component.html',
-  styleUrl: './samples.component.css',
+  selector: 'app-datetime-picker',
+  standalone: true,
+  imports: [ReactiveFormsModule, NgPersianDatepickerModule, SHARED_IMPORTS],
+  templateUrl: './datetime-picker.component.html',
+  styleUrls: ['./datetime-picker.component.css'],
 })
-export class SamplesComponent implements OnInit {
-  // Date values
+export class DatetimePickerComponent implements OnInit {
+  // Date value
   dateValue1 = new FormControl('');
-  dateValue2 = new FormControl('');
-  dateValue3 = new FormControl('');
 
-  // Time form
+  // Time form (hours & minutes)
   timeForm!: FormGroup;
 
   // Dropdown options
@@ -28,24 +29,21 @@ export class SamplesComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    // Generate hours [00-23]
-    this.hours = Array.from({ length: 24 }, (_, i) => i.toString().padStart(2, '0'));
-
-    // Generate minutes [00-59]
-    this.minutes = Array.from({ length: 60 }, (_, i) => i.toString().padStart(2, '0'));
-
+    // Initialize time form
     this.timeForm = this.fb.group({
       hour: ['00'],
       minute: ['00'],
     });
 
-    // Sync display value 1
+    // Populate hours (00-23)
+    this.hours = Array.from({ length: 24 }, (_, i) => i.toString().padStart(2, '0'));
+
+    // Populate minutes (00-59)
+    this.minutes = Array.from({ length: 60 }, (_, i) => i.toString().padStart(2, '0'));
+
+    // Update display when date or time changes
     this.dateValue1.valueChanges.subscribe(() => this.updateDisplay1());
     this.timeForm.valueChanges.subscribe(() => this.updateDisplay1());
-
-    // Sync display values 2 & 3
-    this.dateValue2.valueChanges.subscribe((v) => (this.displayValue2 = v || ''));
-    this.dateValue3.valueChanges.subscribe((v) => (this.displayValue3 = v || ''));
   }
 
   updateDisplay1() {
