@@ -16,7 +16,14 @@ body {
   line-height: 1.6;
   padding: 5px;
 }
-
+a {
+  text-decoration: none;
+}
+em {
+  color: #d70b7b;
+  font-weight: bolder;
+  font-size: 1rem;
+}
 .app-container {
   display: block;
   width: 100%;
@@ -384,3 +391,65 @@ pre {
   padding: 15px;
   border-radius: 8px;
 }
+
+/* Form Controls */
+
+/* General form control container */
+.app-form-control {
+  position: relative;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 320px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Label */
+.app-label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 14px;
+  pointer-events: none;
+  transition: 0.3s ease all;
+  background: #fff; /* so text floats nicely above input */
+  padding: 0 4px;
+}
+
+/* Input (text/number/general) */
+.app-input {
+  width: 100%;
+  padding: 12px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.app-input:focus {
+  border-color: #4f46e5; /* Indigo highlight */
+  background: #fff;
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+}
+
+/* Floating label effect */
+.app-input:focus + .app-label,
+.app-input:not(:placeholder-shown) + .app-label {
+  top: -8px;
+  left: 8px;
+  font-size: 12px;
+  color: #4f46e5;
+}
+
+/* For helper text or dynamic values */
+.app-hint {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #555;
+  font-style: normal;
+}
+
+/* Form Controls */

@@ -22,8 +22,11 @@ export class DatetimePickerComponent implements OnInit {
   displayValue1 = '';
 
   constructor(private fb: FormBuilder) {}
-
   ngOnInit(): void {
+    this.run();
+  }
+
+  run() {
     // Initialize full form
     this.timeForm = this.fb.group({
       date: [''],
@@ -32,14 +35,10 @@ export class DatetimePickerComponent implements OnInit {
     });
 
     // Populate hours (00-23)
-    this.hours = Array.from({ length: 24 }, (_, i) =>
-      i.toString().padStart(2, '0')
-    );
+    this.hours = Array.from({ length: 24 }, (_, i) => i.toString().padStart(2, '0'));
 
     // Populate minutes (00-59)
-    this.minutes = Array.from({ length: 60 }, (_, i) =>
-      i.toString().padStart(2, '0')
-    );
+    this.minutes = Array.from({ length: 60 }, (_, i) => i.toString().padStart(2, '0'));
 
     // Update display when any value changes
     this.timeForm.valueChanges.subscribe(() => this.updateDisplay1());

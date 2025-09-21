@@ -1,0 +1,18 @@
+<div class="app-grid">
+  <div class="app-width-1-1">
+    <div class="app-form-control">
+      <input type="text" id="username" class="app-input" [(ngModel)]="username" />
+      <label for="username" class="app-label">Username</label>
+      <em class="app-hint">{{ username }}</em>
+    </div>
+    <div class="app-form-control">
+      <input type="password" id="password" class="app-input" [(ngModel)]="password" />
+      <label for="password" class="app-label">Password</label>
+      <em class="app-hint">{{ password }}</em>
+    </div>
+    <div class="app-form-control">
+      <button class="app-btn app-btn-primary" (click)="OpenToken()">Open Token</button>
+      <em>Data Emitted : {{ username + ' : ' + password }}</em>
+    </div>
+  </div>
+</div>

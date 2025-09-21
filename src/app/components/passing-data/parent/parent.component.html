@@ -1,0 +1,23 @@
+<div class="app-form-control">
+  <input type="text" id="username" class="app-input" placeholder=" " [(ngModel)]="username" />
+  <label for="username" class="app-label">Username</label>
+  <em class="app-hint">{{ username }}</em>
+</div>
+<div class="app-form-control">
+  <input type="text" id="message" class="app-input" placeholder=" " [(ngModel)]="message" />
+  <label for="message" class="app-label">message</label>
+  <em class="app-hint">{{ message }}</em>
+</div>
+
+<div class="app-form-control">
+  <input type="number" id="age" class="app-input" placeholder=" " [(ngModel)]="age" />
+  <label for="age" class="app-label">Age</label>
+  <em class="app-hint">{{ age }}</em>
+</div>
+
+<!-- ✅ This must exactly match your @Output() name -->
+<app-child
+  [username]="username"
+  [password]="password"
+  (messageEvent)="receiveToken($event)"
+></app-child>
