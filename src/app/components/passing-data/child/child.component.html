@@ -6,6 +6,7 @@
       <em class="app-hint">{{ model.username }}</em>
     </div>
   </div>
+
   <div class="app-width-1-3">
     <div class="app-form-control">
       <input type="password" id="password" class="app-input" [(ngModel)]="model.password" />
@@ -13,6 +14,7 @@
       <em class="app-hint">{{ model.password }}</em>
     </div>
   </div>
+
   <div class="app-width-1-3">
     <div class="app-form-control">
       <input type="number" id="age" class="app-input" [(ngModel)]="model.age" />
@@ -20,16 +22,11 @@
       <em class="app-hint">{{ model.age }}</em>
     </div>
   </div>
+
   <div class="app-width-1-1">
     <div class="app-form-control">
-      <textarea
-        [rows]="10"
-        [(ngModel)]="model.message"
-        class="app-input"
-        name="message"
-        id="message"
-      ></textarea>
-      <label for="message" class="app-label">message</label>
+      <textarea rows="10" [(ngModel)]="model.message" class="app-input" id="message"></textarea>
+      <label for="message" class="app-label">Message</label>
       <em class="app-hint">{{ model.message }}</em>
     </div>
   </div>
