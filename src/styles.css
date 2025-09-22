@@ -399,7 +399,6 @@ pre {
   position: relative;
   margin: 20px 0;
   width: 100%;
-  max-width: 320px;
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -448,8 +447,50 @@ pre {
 .app-hint {
   margin-top: 6px;
   font-size: 13px;
-  color: #555;
+  color: #a8a8a8;
   font-style: normal;
+  border-bottom: 3px double rgb(255, 0, 179);
 }
 
 /* Form Controls */
+/* List */
+.app-list {
+  list-style: none; /* remove default bullets */
+  margin: 0;
+  padding: 0;
+  max-width: 600px;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.app-list-item {
+  padding: 14px 18px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 15px;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.app-list-item:last-child {
+  border-bottom: none;
+}
+
+.app-list-item:hover {
+  background: #f3f4f6;
+  transform: translateX(3px);
+  cursor: pointer;
+}
+
+.app-list-item::before {
+  content: '📧'; /* you can swap this with another icon */
+  font-size: 18px;
+  flex-shrink: 0;
+  color: #4f46e5; /* indigo accent */
+}
+
+/* List */

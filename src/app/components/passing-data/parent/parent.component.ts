@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ChildComponent } from '../child/child.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { IEmail } from '../../../models/IEmail';
 
 @Component({
   selector: 'app-parent',
@@ -11,15 +12,14 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './parent.component.css',
 })
 export class ParentComponent {
-  message: string = '';
-  username: string = '';
-  password: string = '';
-  age: string = '';
+  email: IEmail = {};
+  emails: IEmail[] = [];
 
-  receiveToken(event: { username: string; password: string }) {
-    this.username = event.username;
-    this.password = event.password;
-    console.log('=> this.username : ', this.username);
-    console.log('=> this.password : ', this.password);
+  getEmail(event: { model: IEmail }) {
+    this.addEmail(event.model);
+  }
+
+  addEmail(parameter: IEmail) {
+    this.emails.push(parameter);
   }
 }

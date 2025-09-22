@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { IEmail } from '../../../models/IEmail';
 
 @Component({
   selector: 'app-child',
@@ -9,18 +10,12 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './child.component.css',
 })
 export class ChildComponent {
-  @Input() username: string = ''; // Data comes from parent
-  @Input() password: string = ''; // Data comes from parent
+  @Input() model: IEmail = {};
+
   // @Output() eventEmitter = new EventEmitter<string>();
-  @Output() eventEmitter = new EventEmitter<{ username: string; password: string }>();
+  @Output() eventEmitter = new EventEmitter<{ model: IEmail }>();
 
-  OpenToken() {
-    // this.eventEmitter.emit(this.username);
-    // this.eventEmitter.emit(this.password);
-
-    this.eventEmitter.emit({
-      username: this.username,
-      password: this.password,
-    });
+  sendEmail() {
+    this.eventEmitter.emit({ model: this.model });
   }
 }
