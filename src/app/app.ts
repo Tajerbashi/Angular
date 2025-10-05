@@ -1,15 +1,12 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { DatetimePickerComponent } from './components/datetime-picker/datetime-picker.component';
-import { DateTimePickerPersianComponent } from './components/date-time-picker-persian/date-time-picker-persian.component';
-import { ParentComponent } from './components/passing-data/parent/parent.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, DatetimePickerComponent, DateTimePickerPersianComponent, ParentComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrls: ['./app.css'],
+  styleUrl: './app.css'
 })
-export class App {}
+export class App {
+  protected readonly title = signal('angular-app');
+}
