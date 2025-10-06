@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  gap: 1rem;
+  background: #1976d2;
+  padding: 1rem;
+  a {
+    color: white;
+    text-decoration: none;
+    &.active {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
+}

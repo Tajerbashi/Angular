@@ -1,0 +1,24 @@
+<header class="navbar navbar-light bg-white shadow-sm px-3">
+  <!-- <button class="btn btn-outline-secondary me-2" (click)="toggleSidebar()">
+    <i class="bi bi-list"></i>
+  </button> -->
+
+  <div class="ms-auto d-flex align-items-center gap-3">
+    <button class="btn btn-outline-secondary">
+      <i class="bi bi-bell"></i>
+    </button>
+    <div class="dropdown">
+      <button
+        class="btn btn-outline-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+      >
+        <i class="bi bi-person-circle me-1"></i> Admin
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+        <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</header>

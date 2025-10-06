@@ -1,0 +1,12 @@
+.app-layout {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content-area {
+  background-color: #f8f9fa;
+}
+
+main {
+  overflow-y: auto;
+}
