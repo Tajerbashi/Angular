@@ -1,1 +1,20 @@
-<p>users works!</p>
+<app-page-container>
+  <app-page-content>
+    <app-grid>
+      <div class="app-width-1-1 app-width-md-1-4 app-width-lg-1-4">Users</div>
+    </app-grid>
+    <app-grid>
+      <app-data-grid
+        [title]="'User List'"
+        [subtitle]="'Glass blur Angular component'"
+        [columns]="tableColumns"
+        [data]="tableData"
+        (edit)="onEdit($event)"
+        (delete)="onDelete($event)"
+        (addNew)="onAddNew()"
+        (exportCsv)="onExportCsv()"
+      >
+      </app-data-grid>
+    </app-grid>
+  </app-page-content>
+</app-page-container>

@@ -1,0 +1,43 @@
+<div class="glass">
+  <div class="header-row">
+    <div class="title">
+      <h1>{{ title }}</h1>
+      <div class="subtitle">{{ subtitle }}</div>
+    </div>
+
+    <div class="header-actions">
+      <button class="btn" (click)="onExport()">Export</button>
+      <button class="btn primary" (click)="onAddNew()">New</button>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table class="app-table">
+      <thead class="app-table-header">
+        <tr>
+          <th>#</th>
+          @for (item of columns; track $index) {
+          <th>{{ item.label }}</th>
+          }
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="app-table-body">
+        @for (item of data;; track $index;) {
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          @for (col of columns; track $index) {
+          <td>{{ item[col.key] }}</td>
+          }
+          <td>
+            <div class="actions">
+              <button class="btn icon" (click)="onEdit(item)" title="Edit">✏️</button>
+              <button class="btn icon" (click)="onDelete(item)" title="Delete">🗑️</button>
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
