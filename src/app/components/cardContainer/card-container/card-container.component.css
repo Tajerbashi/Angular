@@ -1,0 +1,23 @@
+/* --- Base Card Container --- */
+.app-card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 1rem;
+}
+
+.app-card-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+  .app-card-container {
+    margin: 0.5rem;
+  }
+}

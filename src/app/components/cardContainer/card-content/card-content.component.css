@@ -1,0 +1,15 @@
+/* --- Content --- */
+.app-card-content {
+  flex: 1;
+  padding: 1.5rem;
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+  .app-card-content {
+    padding: 1rem;
+  }
+}
