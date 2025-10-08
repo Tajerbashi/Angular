@@ -10,6 +10,10 @@
           "standalone": true,
           "skipTests": true,
           "type": "component"
+        },
+        "@schematics/angular:service": {
+          "type": "service",
+          "skipTests": true
         }
       },
       "root": "",
