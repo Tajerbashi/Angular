@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PageContainerComponent } from '../../../../components/page-container/page-container.component';
 import { PageContentComponent } from '../../../../components/page-content/page-content.component';
 import { GridComponent } from '../../../../components/grid/grid.component';
 import { DataGridComponent } from '../../../../components/data-grid/data-grid.component';
 import { TableColumn, TableRow } from '../../../../components/data-grid/IDataGridModel';
+import { UserService } from '../../../../services/identity/user.service';
+import { IUserDTO } from '../../../../models/Users/iuser-dto';
 
 @Component({
   selector: 'app-users',
@@ -11,7 +13,20 @@ import { TableColumn, TableRow } from '../../../../components/data-grid/IDataGri
   templateUrl: './users.component.html',
   styleUrl: './users.component.css',
 })
-export class UsersComponent {
+export class UsersComponent implements OnInit {
+  users: IUserDTO[] = [];
+
+  constructor(private userService: UserService) {}
+  ngOnInit(): void {
+    // this.productService.get().subscribe({
+    //   next: (data) => (this.products = data),
+    //   error: (err) => console.error(err),
+    // });
+    this.userService.get().subscribe({
+      next: (data) => (this.users = data.data),
+      error: (err) => console.error(err),
+    });
+  }
   tableColumns: TableColumn[] = [
     { key: 'title1', label: 'Title1' },
     { key: 'title2', label: 'Title2' },
